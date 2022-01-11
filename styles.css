@@ -1,0 +1,189 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+/* Variables */
+:root {
+  --ff-primary: "Source Sans Pro", sans-serif;
+  --ff-secondary: "Source Code Pro", monospace;
+
+  --fw-reg: 300;
+  --fw-bold: 900;
+
+  --clr-light2: #f9fafa;
+  --clr-light: #ccf2f4;
+  --clr-dark: #303030;
+  /* AAAAAA color dark */
+  /* --clr-accent: #16e0bd; */
+  --clr-accent: #a4ebf3;
+
+  --fs-h1: 3rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+}
+@media (min-width: 800px) {
+  :root {
+    --fs-h1: 4.5rem;
+    --fs-h2: 3.75rem;
+    --fs-h3: 1.5rem;
+    --fs-body: 1.125rem;
+  }
+}
+/* General */
+body {
+  background: var(--clr-light);
+  color: var(--clr-dark);
+  margin: 0;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Text */
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+  margin: 0;
+}
+h1 {
+  font-size: var(--fs-h1);
+}
+h2 {
+  font-size: var(--fs-h2);
+}
+h3 {
+  font-size: var(--fs-h3);
+}
+strong {
+  font-weight: var(--fw-bold);
+}
+section {
+  padding: 5em 2em;
+}
+
+.section__subtitle {
+  margin: 0;
+  font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--about {
+  background: var(--clr-accent);
+  font-family: var(--ff-secondary);
+  margin-bottom: 1em;
+  padding: 00.25em;
+}
+.section__title {
+  margin-bottom: 0.25em;
+}
+.section__title--intro {
+  font-weight: var(--fw-reg);
+}
+.section__title--intro strong {
+  display: block;
+}
+
+.intro {
+  position: relative;
+}
+.intro__img {
+  box-shadow: var(--bs);
+}
+@media (min-width: 600px) {
+  .intro {
+    display: grid;
+    width: min-content;
+    margin: 0 auto;
+    grid-column-gap: 1em;
+    grid-template-areas:
+      "img title"
+      "img subtitle";
+    grid-template-columns: min-content max-content;
+  }
+
+  .intro__img {
+    grid-area: img;
+    min-width: 250px;
+  }
+
+  .section__subtitle--intro {
+    align-self: start;
+    grid-column: -1 / 1;
+    grid-row: 2;
+    text-align: right;
+    position: relative;
+    left: -1.5em;
+    width: calc(100% + 1.5em);
+    z-index: -10;
+    /* margin-top: 1.8em; */
+  }
+}
+
+/* skills section */
+
+.skills {
+  background-color: var(--clr-dark);
+  background-image: url("./Resources/Images/pexels-christina-morillo-1181298.jpg");
+  background-size: cover;
+  background-blend-mode: multiply;
+
+  color: var(--clr-light2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section__title--skills {
+  position: relative;
+  color: var(--clr-accent);
+  /* background-color: red; */
+  left: 55px;
+}
+.section__title--skills::after {
+  content: "";
+  display: block;
+  width: 15%;
+  height: 2px;
+  margin: 0.5em auto;
+  background-color: currentColor;
+  opacity: 0.4;
+}
+.area {
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+.area ul {
+  text-align: left;
+}
+
+@media (min-width: 800px) {
+  .areas {
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    left: 35px;
+    margin-bottom: 80px;
+  }
+  .area {
+    min-width: 300px;
+  }
+  .area ul {
+    position: absolute;
+    top: 90%;
+  }
+  .area + .area {
+    margin-left: 2em;
+  }
+}
