@@ -25,19 +25,35 @@
           src="./Resources/Images/National_Institute_of_Technology,_Calicut_Logo.png"
         />
       </div>
-      <button class="nav-toggle" aria-label="toggle navigation">
-        <span class="hamburger"></span>
-      </button>
-      <nav class="nav">
+      <div
+        class="nav-toggle"
+        aria-label="toggle navigation"
+        onclick="handleClick()"
+      >
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav class="nav" id="mynav">
         <ul class="nav__list">
-          <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
           <li class="nav__item">
-            <a href="#skills" class="nav__link">Skills</a>
+            <a href="#home" class="nav__link">
+              <i class="fas fa-home"></i>&nbsp; &nbsp; Home</a
+            >
           </li>
           <li class="nav__item">
-            <a href="#about" class="nav__link">About me</a>
+            <a href="#skills" class="nav__link">
+              <i class="fas fa-user-graduate"></i>&nbsp; &nbsp; Skills</a
+            >
           </li>
-          <li class="nav__item"><a href="#" class="nav__link">Projects</a></li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">
+              <i class="fas fa-user-alt"></i>&nbsp; &nbsp; About me</a
+            >
+          </li>
+          <li class="nav__item">
+            <a href="#projects" class="nav__link"
+              ><i class="fas fa-code"></i>&nbsp; &nbsp; Projects</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
@@ -312,5 +328,6 @@
         </ul>
       </div>
     </footer>
+    <script src="./index.js"></script>
   </body>
 </html>
