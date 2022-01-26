@@ -315,7 +315,7 @@ section {
 @media (min-width: 1300px) {
   .projects-container {
     max-width: calc(1200px + 6em);
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 }
 
